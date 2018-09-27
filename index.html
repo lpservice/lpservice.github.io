@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LP</title>
+    <link rel="stylesheet" href="styles/flipclock.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="main">
+        <a class="logo_con" href="#">
+            <img class="logo" src="./images/logo.png" alt="">
+        </a>
+        <div class="text"><img src="./images/text.png" alt=""></div>
+        <a href="#" class="btn">Get Now!</a>
+        <div class="clock" ></div>
+    </div>
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/flipclock.min.js"></script>
+    <script>
+        $(function(){
+            clock = $('.clock').FlipClock(80, {
+		        clockFace: 'MinuteCounter',
+		        countdown: true,
+		        callbacks: {
+		        	stop: function() {
+		        		$('.message').html('The clock has stopped!');
+		        	}
+		        }
+		    });
+        })
+    </script>
+</body>
+</html>
